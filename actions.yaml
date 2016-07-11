@@ -1,0 +1,7 @@
+ping:
+  description: ping stuff
+  params:
+    host:
+      description: who to ping
+      type: string
+      default: localhost
