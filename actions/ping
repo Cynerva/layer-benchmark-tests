@@ -14,14 +14,21 @@ def set_action_results(results):
 
 def ping():
     host = get_action_param("host")
-    cmd = "ping -c 1 %s" % host
+    cmd = "ping -f -c 100 %s" % host
     raw = subprocess.check_output(cmd.split()).decode("utf-8")
-    return None # TODO
+    min, avg, max, mdev = [float(i) for i in raw.split('\n')[-2].split('=')[1].split('ms')[0].strip().split('/')]
+    return {
+        'results.rtt-min.value': min,
+        'results.rtt-min.units': 'ms',
+        'results.rtt-avg.value': avg,
+        'results.rtt-avg.units': 'ms',
+        'results.rtt-max.value': max,
+        'results.rtt-max.units': 'ms',
+        'results.rtt-mdev.value': mdev,
+        'results.rtt-mdev.units': 'ms',
+    }
 
 Benchmark.start()
 result = ping()
 Benchmark.finish()
-set_action_results({
-  "results.test.value": 1,
-  "results.test.units": "pings"
-})
+set_action_results(result)
