@@ -26,6 +26,9 @@ def ping():
         'results.rtt-max.units': 'ms',
         'results.rtt-mdev.value': mdev,
         'results.rtt-mdev.units': 'ms',
+        'meta.composite.value': avg,
+        'meta.composite.units': 'ms',
+        'meta.composite.direction': 'asc'
     }
 
 Benchmark.start()
