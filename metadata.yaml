@@ -1,7 +1,6 @@
-name: ping
-summary: ping stuff
+name: benchmark-tests
+summary: benchmark tests
 maintainer: George Kraft <george.kraft@canonical.com>
-description: |
-  ping stuff
+description: charm for testing benchmark results
 tags:
   - misc

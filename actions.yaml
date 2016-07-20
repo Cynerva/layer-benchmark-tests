@@ -5,3 +5,6 @@ ping:
       description: who to ping
       type: string
       default: localhost
+fail:
+  description: benchmark that always fails
+  params: {}
