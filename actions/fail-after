@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+
+from charms.benchmark import Benchmark
+
+Benchmark.start()
+Benchmark.finish()
+raise Exception("Failed deliberately")

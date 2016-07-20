@@ -5,6 +5,12 @@ ping:
       description: who to ping
       type: string
       default: localhost
-fail:
-  description: benchmark that always fails
+fail-before:
+  description: action that fails before benchmark start
+  params: {}
+fail-during:
+  description: action that fails during benchmark
+  params: {}
+fail-after:
+  description: action that fails after benchmark finish
   params: {}
